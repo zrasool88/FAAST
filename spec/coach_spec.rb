@@ -21,10 +21,10 @@ describe Coach do
 		expect(coach).to be_full
 	end
 
-	# it "should not allow passenger to board when full" do
-	# 	40.times {coach.board(passenger)}
-	# 	expect(coach.board(passenger)).to raise_error(RuntimeError)
-	# end
+	it "should not allow passenger to board when full" do
+		40.times {coach.board(passenger)}
+		expect{coach.board(passenger)}.to raise_error(RuntimeError)
+	end
 
 	it "should allow a passenger to leave" do
 		coach.board(passenger)

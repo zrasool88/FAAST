@@ -10,7 +10,11 @@ class Station
 	end
 
 	def touch_in(passenger)
-		@passengers << passenger
+		if @passengers.include? passenger 
+			raise "You've already touched in!"
+		else
+			@passengers << passenger
+		end
 	end
 
 	def touch_out(passenger)

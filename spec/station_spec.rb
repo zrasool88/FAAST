@@ -12,6 +12,11 @@ describe Station do
 		expect(station.passengers_count).to eq(1)
 	end
 
+	it "shouldn't let the same passenger touch in twice" do
+		station.touch_in(passenger)
+		expect{station.touch_in(passenger)}.to raise_error (RuntimeError)
+	end
+
 	it "lets a passenger touch out" do
 		station.touch_in(passenger)
 		expect(station.passengers_count).to eq(1)

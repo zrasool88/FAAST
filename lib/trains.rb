@@ -1,12 +1,18 @@
-require 'coach'
+require './lib/coach.rb'
 
 class Train
 
 	DEFAULT_COACH = 10
 
-	attr_reader :coach
+	attr_reader :coaches
 
 	def initialize(options = {})
-		@coach = options.fetch(:coach, DEFAULT_COACH)
+		@coach_number = options.fetch(:coaches, DEFAULT_COACH)
+		@coaches ||= []
+		@coach_number.times {@coaches << Coach.new }
+	end
+
+	def full?
+		coaches.all? { |coach| coach.full?} 
 	end
 end
