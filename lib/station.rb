@@ -28,5 +28,4 @@ class Station
 	def train_depart(train)
 		@trains.pop
 	end
-
 end
