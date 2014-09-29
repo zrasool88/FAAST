@@ -8,7 +8,7 @@ describe Passenger do
 
 	it "topping up should increase balance" do
 		expect(passenger.balance).to eq(0)
-		passenger.top_up
+		passenger.top_up(2)
 		expect(passenger.balance).to eq(2)
 	end
 

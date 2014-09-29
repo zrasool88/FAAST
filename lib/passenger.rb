@@ -6,8 +6,8 @@ class Passenger
 		@balance = 0
 	end
 
-	def top_up
-		@balance += 2
+	def top_up(value)
+		@balance += value
 	end
 
 	def board(coach)

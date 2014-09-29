@@ -1,10 +1,11 @@
 require 'trains'
 require 'passenger'
+require 'station'
 
 describe Train do
 	
 	let(:train){Train.new}
-	let(:station){double :station}
+	let(:station){Station.new}
 
 	it "it should have a defined number of coaches" do
 		expect(train.coaches.count).to eq(10)
@@ -19,5 +20,23 @@ describe Train do
 			40.times {Passenger.new.board(coach)}
 		end
 		expect(train).to be_full
+	end
+		
+	it "arrives at station" do
+		expect(station.trains_count).to eq (0)
+		train.arrive_at(station)
+		expect(station.trains_count).to eq (1)
+	end
+
+	it "can't arrive at the station twice" do
+		train.arrive_at(station)
+		expect{train.arrive_at(station)}.to raise_error (RuntimeError)
+	end
+
+	it "depart from the station" do
+		train.arrive_at(station)
+		expect(station.trains_count).to eq (1)
+		train.depart_from(station)
+		expect(station.trains_count).to eq (0)
 	end
 end

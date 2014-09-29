@@ -15,4 +15,13 @@ class Train
 	def full?
 		coaches.all? { |coach| coach.full?} 
 	end
+
+	def arrive_at(station)
+		raise "Dude, You're already at the station" if station.trains.include? self
+		station.trains << self
+	end
+
+	def depart_from(station)
+		station.trains.delete(self)
+	end
 end
