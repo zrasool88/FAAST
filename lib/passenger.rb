@@ -9,4 +9,15 @@ class Passenger
 	def top_up
 		@balance += 2
 	end
+
+	def board(coach)
+		raise "Carriage is full" if coach.full?
+		coach.passengers << self
+	end
+
+	def leave(coach)
+		coach.passengers.delete(self)
+	end
 end
+
+

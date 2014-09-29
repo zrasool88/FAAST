@@ -3,15 +3,11 @@ class Coach
 	DEFAULT_CAPACITY = 40
 
 	attr_reader :capacity
+	attr_accessor :passengers
 
 	def initialize(options = {})
 		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
 		@passengers = []
-	end
-
-	def board(passenger)
-		raise "Carriage is full" if full?
-		@passengers << passenger
 	end
 
 	def passenger_count
@@ -20,9 +16,5 @@ class Coach
 
 	def full?
 		passenger_count == @capacity
-	end
-
-	def release(passenger)
-		@passengers.pop
 	end
 end

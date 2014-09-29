@@ -1,10 +1,10 @@
 require 'trains'
+require 'passenger'
 
 describe Train do
 	
 	let(:train){Train.new}
 	let(:station){double :station}
-	let(:passenger){double :passenger}
 
 	it "it should have a defined number of coaches" do
 		expect(train.coaches.count).to eq(10)
@@ -16,7 +16,7 @@ describe Train do
 
 	it "should know when all the coaches are full" do
 		train.coaches.map do |coach|
-			40.times {coach.board(passenger)}
+			40.times {Passenger.new.board(coach)}
 		end
 		expect(train).to be_full
 	end
