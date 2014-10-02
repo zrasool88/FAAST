@@ -3,7 +3,7 @@ require 'passenger'
 
 describe Coach do
 	
-	let (:coach) { Coach.new(:capacity => 40) } 
+	let (:coach) { Coach.new } 
 	# let (:passenger) {Passenger.new}
 
 	it "initializes with a capacity of 40 passengers" do
@@ -12,7 +12,7 @@ describe Coach do
 
 	it "should know when its full" do
 		expect(coach).not_to be_full
-		40.times {Passenger.new.board(coach)}
+		40.times {Passenger.new.get_on(coach)}
 		expect(coach).to be_full
 	end
 	

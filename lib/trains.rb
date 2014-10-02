@@ -1,15 +1,15 @@
-require './lib/coach.rb'
+require_relative 'coach'
 
 class Train
 
-	DEFAULT_COACH = 10
-
 	attr_reader :coaches
 
-	def initialize(options = {})
-		@coach_number = options.fetch(:coaches, DEFAULT_COACH)
-		@coaches ||= []
-		@coach_number.times {@coaches << Coach.new }
+	def initialize
+		@coaches = []
+	end
+
+	def add_coach(coach)
+		@coaches << coach
 	end
 
 	def full?
@@ -17,11 +17,11 @@ class Train
 	end
 
 	def arrive_at(station)
-		raise "Dude, You're already at the station" if station.trains.include? self
-		station.trains << self
+		raise "Dude, You're already at the station" if station.stationed?(self)
+		station.inbound(self)
 	end
 
 	def depart_from(station)
-		station.trains.delete(self)
+		station.outbound(self)
 	end
 end

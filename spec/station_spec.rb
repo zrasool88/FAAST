@@ -33,5 +33,10 @@ describe Station do
 		station.touch_out(passenger)
 		expect(station.passengers_count).to eq(0)
 	end
+
+	it "let's us know that a train is already at the station" do
+		station.inbound(train)
+		expect(station.stationed?(train)).to be true
+	end
 		
 end

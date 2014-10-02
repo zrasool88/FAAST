@@ -24,8 +24,20 @@ class Station
 		@passengers.delete(passenger)
 	end
 
+	def inbound(train)
+		@trains << train
+	end
+
+	def outbound(train)
+		@trains.delete(train)
+	end
+
 	def trains_count
 		@trains.count
+	end
+
+	def stationed?(train)
+		@trains.include?(train)
 	end
 
 end

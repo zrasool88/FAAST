@@ -12,22 +12,22 @@ describe Passenger do
 		expect(passenger.balance).to eq(2)
 	end
 
-	it "passenger should board coach" do
+	it "should get on coach" do
 		expect(coach.passenger_count).to eq (0)
-		passenger.board(coach)
+		passenger.get_on(coach)
 		expect(coach.passenger_count).to eq (1)
 	end
 
 	it "should not board a coach when full" do
-		40.times {Passenger.new.board(coach)}
-		expect{passenger.board(coach)}.to raise_error(RuntimeError)
+		40.times {Passenger.new.get_on(coach)}
+		expect{passenger.get_on(coach)}.to raise_error(RuntimeError)
 	end
 
 
-	it "passenger should be able to leave coach" do
-		passenger.board(coach)
+	it "should be able to leave coach" do
+		passenger.get_on(coach)
 		expect(coach.passenger_count).to eq(1)
-		passenger.leave(coach)
+		passenger.get_off(coach)
 		expect(coach.passenger_count).to eq(0)
 	end
 

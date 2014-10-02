@@ -6,12 +6,15 @@ describe Train do
 	
 	let(:train){Train.new}
 	let(:station){Station.new}
+	let(:coach){Coach.new}
 
 	it "it should have a defined number of coaches" do
+		10.times {train.add_coach(coach)}
 		expect(train.coaches.count).to eq(10)
 	end
 
 	it "should know when all the coaches are not full" do
+		train.add_coach(coach)
 		expect(train).not_to be_full
 	end
 

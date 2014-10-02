@@ -6,17 +6,17 @@ class Passenger
 		@balance = 0
 	end
 
-	def top_up(value)
-		@balance += value
+	def top_up(amount)
+		@balance += amount
 	end
 
-	def board(coach)
+	def get_on(coach)
 		raise "Carriage is full" if coach.full?
-		coach.passengers << self
+		coach.board(self)
 	end
 
-	def leave(coach)
-		coach.passengers.delete(self)
+	def get_off(coach)
+		coach.alight(self)
 	end
 end
 
