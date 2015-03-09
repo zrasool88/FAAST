@@ -12,15 +12,11 @@ FAAST:
 * **Coach**: Has a capacity of 40 passengers, allows passengers to board, allows passengers to alight, keeps a count of passengers onboard, and knows when it's full.
 * **Passenger**: Has a top-up balance in order to travel on trains; initial balance is zero. Can top-up balance in order to travel. Can board a coach and alight from a coach.
 * **Station**: Lets a passenger touch in, lets the passenger touch out, regulates train arrival and departure, knows how many trains are at the station.
-* **Train**: accepts broken bikes from the van, fixes broken bike, returns fixed bike to van, and has a limited capacity.
+* **Train**: Arrives at station, departs from station, finite number of coaches, knows when its coaches are full.
 
-###To-Do
-* Implement Van class
-* Implement Garage class
-
-## What we learnt
-* Introduced to CRC (Class-Responsibility-Collaboration) Card
-* Started coding in Ruby
+## What was tested
+* CRC (Class-Responsibility-Collaboration) Card
+* Ruby syntax
 * Testing using Rspec
 * Mocking using doubles in Rspec
 * Refactoring Code
@@ -37,4 +33,4 @@ FAAST:
 2. Change into the directory
 3. Run IRB
 4. Load runner.rb file
-5. Bike away
+5. Take a train somewhere!
