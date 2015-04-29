@@ -1,7 +1,6 @@
 require_relative 'coach'
 
 class Train
-
   attr_reader :coaches
 
   def initialize
@@ -13,16 +12,15 @@ class Train
   end
 
   def full?
-    coaches.all? { |coach| coach.full?} 
+    coaches.all?(&:full?)
   end
 
   def arrive_at(station)
-    raise "Dude, You're already at the station" if station.stationed?(self)
+    fail 'Dude, You are already at the station' if station.stationed?(self)
     station.inbound(self)
   end
 
   def depart_from(station)
     station.outbound(self)
   end
-
 end

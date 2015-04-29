@@ -1,8 +1,7 @@
 class Station
-
   attr_accessor :trains, :passengers
 
-  def initialize 
+  def initialize
     @passengers = []
     @trains = []
   end
@@ -12,9 +11,10 @@ class Station
   end
 
   def touch_in(passenger)
-    if @passengers.include? passenger 
-      raise "You've already touched in!"
-    elsif passenger.balance < 2 then raise "You do not have enough top-up credit"
+    if @passengers.include? passenger
+      fail 'Youve already touched in!'
+    elsif passenger.balance < 2
+      fail 'You do not have enough top-up credit'
     else
       @passengers << passenger
     end
@@ -39,5 +39,4 @@ class Station
   def stationed?(train)
     @trains.include?(train)
   end
-
 end

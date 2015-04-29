@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/zrasool88/FAAST/badges/gpa.svg)](https://codeclimate.com/github/zrasool88/FAAST) [![Test Coverage](https://codeclimate.com/github/zrasool88/FAAST/badges/coverage.svg)](https://codeclimate.com/github/zrasool88/FAAST) [![Build Status](https://travis-ci.org/zrasool88/FAAST.svg)](https://travis-ci.org/zrasool88/FAAST) 
+
 **Week 1: Challenge @ Makers Academy**
 
 # Introduction to Object Oriented Programming and Ruby
@@ -28,7 +30,6 @@ FAAST:
 * IRB
 
 ## How to Use
-
 1. Clone the repository
 2. Change into the directory
 3. Run IRB

@@ -1,5 +1,4 @@
 class Coach
-
   attr_reader :capacity
   attr_accessor :passengers
 
@@ -23,5 +22,4 @@ class Coach
   def full?
     passenger_count == @capacity
   end
-
 end

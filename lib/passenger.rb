@@ -1,5 +1,4 @@
 class Passenger
-
   attr_reader :balance
 
   def initialize
@@ -11,12 +10,11 @@ class Passenger
   end
 
   def get_on(coach)
-    raise "Carriage is full" if coach.full?
+    fail 'Carriage is full' if coach.full?
     coach.board(self)
   end
 
   def get_off(coach)
     coach.alight(self)
   end
-
 end
