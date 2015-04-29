@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'station'
-require 'Passenger'
+require 'passenger'
 
 describe Station do
   let(:station) { described_class.new }
