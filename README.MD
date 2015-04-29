@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/zrasool88/FAAST/badges/gpa.svg)](https://codeclimate.com/github/zrasool88/FAAST) [![Test Coverage](https://codeclimate.com/github/zrasool88/FAAST/badges/coverage.svg)](https://codeclimate.com/github/zrasool88/FAAST) [![Build Status](https://travis-ci.org/zrasool88/FAAST.svg)](https://travis-ci.org/zrasool88/FAAST) 
+[![Code Climate](https://codeclimate.com/github/zrasool88/FAAST/badges/gpa.svg)](https://codeclimate.com/github/zrasool88/FAAST) [![Test Coverage](https://codeclimate.com/github/zrasool88/FAAST/badges/coverage.svg)](https://codeclimate.com/github/zrasool88/FAAST) [![Build Status](https://travis-ci.org/zrasool88/FAAST.svg)](https://travis-ci.org/zrasool88/FAAST) [![Dependency Status](https://gemnasium.com/zrasool88/FAAST.svg)](https://gemnasium.com/zrasool88/FAAST)
 
 **Week 1: Challenge @ Makers Academy**
 
